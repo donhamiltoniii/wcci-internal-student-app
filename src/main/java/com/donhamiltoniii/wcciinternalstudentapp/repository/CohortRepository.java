@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.stereotype.Repository;
 
 import com.donhamiltoniii.wcciinternalstudentapp.domain.Cohort;
+import com.donhamiltoniii.wcciinternalstudentapp.domain.Student;
 
 @Repository
 public class CohortRepository {
@@ -18,9 +19,15 @@ public class CohortRepository {
 	}
 
 	private void populate() {
-		this.save(new Cohort(1L, "Java"));
-		this.save(new Cohort(2L, "JavaScript"));
-		this.save(new Cohort(3L, "Haskell"));
+		Student studentOne = new Student(1L, "John", "Doe");
+		Student studentTwo = new Student(2L, "Jane", "Doe");
+		Student studentThree = new Student(3L, "Jason", "Doe");
+		Student studentFour = new Student(4L, "Jeff", "Doe");
+		Student studentFive = new Student(5L, "Julie", "Doe");
+		
+		this.save(new Cohort(1L, "Java", studentTwo, studentFive));
+		this.save(new Cohort(2L, "JavaScript", studentOne, studentThree, studentFive));
+		this.save(new Cohort(3L, "Haskell", studentFour, studentOne));
 	}
 	
 	public Collection<Cohort> findAll() {

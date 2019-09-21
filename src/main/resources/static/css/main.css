@@ -1,0 +1,55 @@
+/* Browser Default Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  --dark-brown: #1d1a05;
+  --green: #7fb069;
+  --orange: #e6aa68;
+  --red: #ca3c25;
+  --yellow: #fffbbd;
+
+  color: var(--dark-brown);
+  font: 20px/1 sans-serif;
+}
+
+a {
+  color: var(--red);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--orange);
+}
+
+ul {
+  list-style: none;
+}
+
+/* BEM rules */
+.main-header {
+  align-items: center;
+  background-color: var(--green);
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.main-header__title {
+  color: var(--yellow);
+}
+
+.nav-menu__list {
+  display: flex;
+}
+
+.nav-menu__list-item {
+  margin-right: 1rem;
+}
+
+.nav-menu__list-item:last-child {
+  margin-right: 0;
+}

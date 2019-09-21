@@ -5,15 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>WCCI Cohorts</title>
+    <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
-    <h1>WCCI Cohorts</h1>
-    <ul>
-      <li th:each="cohort : ${cohorts}">
-        <a th:href="@{'/cohorts/' + ${cohort.id}}" th:text="${cohort.language}"
-          >Default Language</a
-        >
-      </li>
-    </ul>
+    <header class="main-header">
+      <h1 class="main-header__title">WCCI Cohorts</h1>
+    </header>
+    <main>
+      <ul>
+        <li th:each="cohort : ${cohorts}">
+          <a
+            th:href="@{'/cohorts/' + ${cohort.id}}"
+            th:text="${cohort.language}"
+            >Default Language</a
+          >
+        </li>
+      </ul>
+    </main>
   </body>
 </html>
